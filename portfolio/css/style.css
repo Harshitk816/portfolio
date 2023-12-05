@@ -20,6 +20,14 @@
   --medium-font: 1.8rem;
   --p-font: 0.941rem;
 }
+.project{
+  color: white;
+}
+a:visited{
+  
+    color: white;
+  
+}
 section {
   padding: 50px 10%;
 }
