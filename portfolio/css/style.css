@@ -236,6 +236,18 @@ span {
 .js-bar {
   width: 74%;
 }
+.tailwind-bar {
+  width: 80%;
+}
+.bootstrap-bar {
+  width: 86%;
+}
+.oops-bar {
+  width: 86%;
+}
+.mongo-bar{
+  width: 70%;
+}
 .react-bar {
   width: 80%;
 }
