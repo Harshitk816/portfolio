@@ -15,7 +15,8 @@
   --bg-color: #fff;
   --text-color: #0f0c27;
   --hover: hsl(260, 100%, 51%);
- 
+  --sb-color:#fafafa;
+  --bar-color:#033a80;
   --big-font: 3.2rem;
   --medium-font: 1.8rem;
   --p-font: 0.941rem;
@@ -33,7 +34,9 @@ section {
 }
 body.active {
   --text-color: #fff;
-  --bg-color: #0f0c27;
+  --bg-color: #021142;
+  --sb-color:#021450;
+  --bar-color: #2c5cfa;
 }
 body {
   background: var(--bg-color);
@@ -113,6 +116,7 @@ header.shadow {
 }
 .home-img img {
   width: 100%;
+  filter: drop-shadow(0px 2px 2px var(--text-color));
 }
 .home-text span {
   font-size: var(--medium-font);
@@ -142,7 +146,7 @@ header.shadow {
 .social a:hover {
   color: var(--hover);
 }
-.btn {
+/* .btn {
   display: inline-block;
   background: var(--main-color);
   color: #fff;
@@ -151,7 +155,7 @@ header.shadow {
 }
 .btn:hover {
   background: var(--hover);
-}
+} */
  
 
 .about-container {
@@ -224,33 +228,89 @@ span {
   bottom: 0;
   left: 0;
   height: 0.5rem;
-  background: var(--main-color);
+  background: var(--bar-color);
   border-radius: 0.5rem;
 }
 .html-bar {
-  width: 84%;
+  width: 0%;
+  animation: html forwards 5s ;
 }
+@keyframes html {
+  from{width: 0%;}
+  to{width:84%}
+}
+
+
 .css-bar {
-  width: 84%;
+  width: 0%;
+  animation: css forwards 5s ;
 }
+@keyframes css {
+  from{width: 0%;}
+  to{width:84%}
+}
+
+
 .js-bar {
-  width: 74%;
+  width: 0%;
+  animation: js forwards 5s ;
 }
+@keyframes js {
+  from{width: 0%;}
+  to{width:74%}
+}
+
+
 .tailwind-bar {
-  width: 80%;
+  width: 0%;
+  animation: tailwind forwards 5s ;
 }
+@keyframes tailwind {
+  from{width: 0%;}
+  to{width:80%}
+}
+
+
 .bootstrap-bar {
-  width: 86%;
+  width: 0%;
+  animation: bootstrap forwards 5s ;
 }
+@keyframes bootstrap {
+  from{width: 0%;}
+  to{width:86%}
+}
+
+
 .oops-bar {
-  width: 86%;
+  width: 0%;
+  animation: oops forwards 5s ;
 }
+@keyframes oops {
+  from{width: 0%;}
+  to{width:86%}
+}
+
+
 .mongo-bar{
-  width: 70%;
+  width: 0%;
+  animation: mongo forwards 5s ;
 }
+@keyframes mongo {
+  from{width: 0%;}
+  to{width:70%}
+}
+
+
 .react-bar {
-  width: 80%;
+  width: 0%;
+  animation: react forwards 5s ;
 }
+@keyframes react {
+  from{width: 0%;}
+  to{width:80%}
+}
+
+
 .services-content {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, auto));
@@ -261,17 +321,25 @@ span {
 .services-box {
   padding: 20px;
   width: 260px;
+  background-color: var(--sb-color);
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   border-radius: 0.5rem;
   border-bottom: 2px solid var(--main-color);
-  box-shadow: 0 2px 7px rgb(14 55 54 / 15%);
+  box-shadow:  5px 5px 5px 5px rgb(14 55 54 / 15%);
 }
 .services-box:hover{
- background-color: #02225a;
+ background-color: #0c367e;
+ animation: service forwards 0.5s;
 }
+@keyframes service{
+  from {background-color: var(--sb-color);}
+  to {background-color: #0c367e;}
+}
+
+
 
 .services-box h3 {
   font-size: 1rem;
@@ -423,12 +491,12 @@ form textarea {
   margin-bottom: 1.6rem;
 }
 .footer-social a i{
-  color: rgb(10, 26, 208);
+  color: var(--text-color);
   font-size: 25px;
   margin-left: 10px;
   text-align: center;
   line-height: 40px;
-  background-color: #fff;
+  background-color:var(--bg-color);
   border-radius: 50%;
   width: 40px;
   height: 40px;
@@ -557,6 +625,131 @@ form textarea {
     margin-left: 25%;
   }
 }
+
+.btn{
+  position: relative;
+  padding: 10px 22px;
+  background-color: #033a80;
+  border-radius: 6px;
+  color: white;
+  border:none;
+  font-size: 1rem;
+  font-weight: 400;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  
+}
+.btn:active{
+  transform: scale(0.8);
+}
+.btn:hover{
+  box-shadow:  0 1px 5px var(--text-color);
+  animation: button-in forwards 0.5s;
+}
+
+@keyframes button-in{
+  from {background-color: #033a80;}
+  to {background-color: hsl(260, 100%, 51%);}
+
+  from{box-shadow:  0 0 0;}
+  to{box-shadow:  0 0px 5px var(--text-color);}
+}
+.con-logo{
+
+}
+/*underline animation*/
+.underline {
+  display: inline-block;
+  position: relative;
+  color: #0087ca;
+}
+
+.underline::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: hsl(260, 100%, 51%);
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.underline:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* floating div */
+.floating {  
+    animation-name: floating;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    margin-left: 30px;
+    margin-top: 5px;
+}
+ 
+@keyframes floating {
+    0% { transform: translate(0,  0px); }
+    50%  { transform: translate(0, 15px); }
+    100%   { transform: translate(0, -0px); }    
+}
+
+
+/* moving icons */
+@keyframes moveRightAndBack {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(2px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.ico1 {
+  animation: moveRightAndBack 2s infinite;
+}
+@keyframes moveLeftAndBack {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-2px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.ico2 {
+  animation: moveLeftAndBack 2s infinite;
+}
+@keyframes fadeInOutMove {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+}
+
+.letter {
+  animation: fadeInOutMove 2s infinite;
+}
+
+
 
 
 

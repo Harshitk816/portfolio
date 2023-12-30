@@ -27,3 +27,117 @@
             document.body.classList.remove('active');
         }
     }
+
+
+    let observer = new IntersectionObserver((entries, observer) => { 
+        entries.forEach(entry => {
+            if(entry.isIntersecting){
+                entry.target.classList.add('html-bar');
+            } else {
+                entry.target.classList.remove('html-bar');
+            }
+        });
+    });
+    
+    document.querySelectorAll('#html').forEach(div => { 
+        observer.observe(div);
+    });
+
+    let observer1 = new IntersectionObserver((entries, observer) => { 
+        entries.forEach(entry => {
+            if(entry.isIntersecting){
+                entry.target.classList.add('css-bar');
+            } else {
+                entry.target.classList.remove('css-bar');
+            }
+        });
+    });
+    
+    document.querySelectorAll('#css').forEach(div => { 
+        observer1.observe(div);
+    });
+
+    let observer2 = new IntersectionObserver((entries, observer) => { 
+        entries.forEach(entry => {
+            if(entry.isIntersecting){
+                entry.target.classList.add('js-bar');
+            } else {
+                entry.target.classList.remove('js-bar');
+            }
+        });
+    });
+    
+    document.querySelectorAll('#js').forEach(div => { 
+        observer2.observe(div);
+    });
+
+    let observer3 = new IntersectionObserver((entries, observer) => { 
+        entries.forEach(entry => {
+            if(entry.isIntersecting){
+                entry.target.classList.add('react-bar');
+            } else {
+                entry.target.classList.remove('react-bar');
+            }
+        });
+    });
+    
+    document.querySelectorAll('#react').forEach(div => { 
+        observer3.observe(div);
+    });
+
+    let observer4 = new IntersectionObserver((entries, observer) => { 
+        entries.forEach(entry => {
+            if(entry.isIntersecting){
+                entry.target.classList.add('mongo-bar');
+            } else {
+                entry.target.classList.remove('mongo-bar');
+            }
+        });
+    });
+    
+    document.querySelectorAll('#mongo').forEach(div => { 
+        observer4.observe(div);
+    });
+
+    let observer5 = new IntersectionObserver((entries, observer) => { 
+        entries.forEach(entry => {
+            if(entry.isIntersecting){
+                entry.target.classList.add('tailwind-bar');
+            } else {
+                entry.target.classList.remove('tailwind-bar');
+            }
+        });
+    });
+    
+    document.querySelectorAll('#tailwind').forEach(div => { 
+        observer5.observe(div);
+    });
+
+
+    let observer6 = new IntersectionObserver((entries, observer) => { 
+        entries.forEach(entry => {
+            if(entry.isIntersecting){
+                entry.target.classList.add('bootstrap-bar');
+            } else {
+                entry.target.classList.remove('bootstrap-bar');
+            }
+        });
+    });
+    
+    document.querySelectorAll('#bootstrap').forEach(div => { 
+        observer6.observe(div);
+    });
+
+    let observer7 = new IntersectionObserver((entries, observer) => { 
+        entries.forEach(entry => {
+            if(entry.isIntersecting){
+                entry.target.classList.add('oops-bar');
+            } else {
+                entry.target.classList.remove('oops-bar');
+            }
+        });
+    });
+    
+    document.querySelectorAll('#oops').forEach(div => { 
+        observer7.observe(div);
+    });
