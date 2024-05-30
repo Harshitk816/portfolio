@@ -257,7 +257,16 @@ span {
 }
 @keyframes js {
   from{width: 0%;}
-  to{width:74%}
+  to{width:80%}
+}
+
+.express-bar {
+  width: 0%;
+  animation: express forwards 5s ;
+}
+@keyframes express {
+  from{width: 0%;}
+  to{width:70%}
 }
 
 
