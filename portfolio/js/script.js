@@ -53,6 +53,7 @@
         });
     });
     
+    
     document.querySelectorAll('#css').forEach(div => { 
         observer1.observe(div);
     });
@@ -140,4 +141,18 @@
     
     document.querySelectorAll('#oops').forEach(div => { 
         observer7.observe(div);
+    });
+
+
+    let observer8 = new IntersectionObserver((entries, observer) => { 
+        entries.forEach(entry => {
+            if(entry.isIntersecting){
+                entry.target.classList.add('express-bar');
+            } else {
+                entry.target.classList.remove('express-bar');
+            }
+        });
+    });
+    document.querySelectorAll('#express').forEach(div => { 
+        observer8.observe(div);
     });
